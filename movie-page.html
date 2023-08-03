@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="image/android-icon-48x48.png"
+    />
+    <title>Movie Name - Zmovie</title>
+    <!-- CSS files -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@200;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <div
+      class="loading fixed w-full h-full items-center justify-center transition flex bg-neutral-950 opacity-95 text-base text-neutral-200"
+    >
+      <span class="spinner w-32 h-32 rounded-full"></span>
+      <span class="spinner two w-32 h-32 rounded-full"></span>
+      <span class="spinner three w-32 h-32 rounded-full"></span>
+      <span>Loading...</span>
+    </div>
+
+    <div
+      id="progress"
+      class="z-10 flex cursor-pointer items-center justify-center right-7 bottom-7 fixed rounded-full w-12 h-12"
+    >
+      <span
+        id="progress-value"
+        class="w-5/6 h-5/6 text-2xl flex items-center rounded-full justify-center bg-zinc-900"
+        ><i class="fa-solid fa-chevron-up transition text-transparent"></i
+      ></span>
+    </div>
+    <!-- Start Navbar -->
+    <nav
+      class="navbar w-11/12 lg:w-full m-auto py-6 md:px-12 bg-zinc-950 bg-opacity-95 flex flex-wrap items-center gap-3"
+    >
+      <div class="toggle-icon space-y-1 w-6 cursor-pointer z-20 relative">
+        <span class="h-1 bg-slate-100 rounded-md block"></span>
+        <span class="h-1 bg-slate-100 rounded-md block"></span>
+        <span class="h-1 bg-slate-100 rounded-md block"></span>
+      </div>
+      <a
+        href="index.html"
+        class="logo text-lg text-red-600 text-center tracking-widest flex items-end justify-center"
+      >
+        <span class="text-2xl lg:text-5xl pl-2">Z</span>movies
+      </a>
+
+      <form action="" class="search-box col-span-2 flex-1 justify-end flex">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search Movie"
+          class="search-input border-none flex-1 sm:flex-none outline-none bg-transparent text-white placeholder:text-zinc-500"
+          required
+        />
+        <button type="submit" class="text-zinc-300">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+
+      <ul
+        class="menu z-10 bg-zinc-950 fixed top-0 left-0 w-full h-full hidden flex-col lg:flex-row items-center gap-10 text-3xl justify-center text-white"
+      >
+        <li><a href="">Home</a></li>
+        <li><a href="">TV Shows</a></li>
+        <li><a href="">Genre</a></li>
+        <li><a href="">Movies</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Start Banner -->
+    <div class="container mx-auto p-3">
+      <section class="movie-banner relative mt-12">
+        <div class="banner-img absolute h-full w-full overflow-hidden">
+          <img
+            src="Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/cover.jpg"
+            alt=""
+            class="w-full h-full object-cover rounded-md"
+          />
+        </div>
+        <div
+          class="banner-container absolute w-full h-full z-1 p-6 sm:p-10 pt-12 sm:pt-16 grid md:grid-cols-2 gap-3"
+        >
+          <div
+            class="title-container h-full text-zinc-300 flex flex-col justify-between"
+          >
+            <div class="top-info">
+              <h2 class="movie-name text-2xl sm:text-4xl mt-2 mb-3">
+                Pirates of the Caribbean Salazar's Revenge
+              </h2>
+              <ul class="more-about flex items-center gap-3 flex-wrap">
+                <li class="quality text-black bg-red-600 rounded-sm px-1">
+                  FULL HD
+                </li>
+                <li class="rating flex items-center gap-2">
+                  8.2 <img src="image/IMDb-icon.png" class="w-6 h-3" alt="" />
+                </li>
+                <li>28 August 2017</li>
+                <li>87min</li>
+              </ul>
+              <ul class="lang flex gap-3 mt-5">
+                <li class="p-2 bg-neutral-900">ENGLISH</li>
+                <li class="p-2 bg-neutral-900">ARABIC</li>
+              </ul>
+            </div>
+            <div class="bottom-info flex flex-wrap gap-6">
+              <div class="cat">
+                <h3>Category</h3>
+                <ul class="flex gap-2 text-red-600 text-sm">
+                  <li><a href="">Thriller,</a></li>
+                  <li><a href="">Mistery,</a></li>
+                  <li><a href="">Horror</a></li>
+                </ul>
+              </div>
+              <a
+                href="https://www.youtube.com/watch?v=ZgQkEf3dQ08"
+                class="watch-btn py-2 uppercase px-7 border border-zinc-500 text-zinc-300 bg-neutral-900 hover:bg-red-600 transition"
+                >Watch Trailer</a
+              >
+            </div>
+          </div>
+
+          <div class="play-btn h-full flex justify-center items-center">
+            <span
+              class="text-neutral-200 relative text-2xl w-16 h-16 flex items-center justify-center rounded-full bg-neutral-800 cursor-pointer bg-opacity-50 border border-neutral-500"
+            >
+              <i class="fas fa-play"></i>
+            </span>
+          </div>
+
+          <div
+            class="play-movie fade hidden fixed w-full h-full top-0 left-0 items-center justify-center bg-neutral-950 bg-opacity-60 z-50"
+          >
+            <span
+              class="close-video fixed right-16 top-16 text-red-600 z-50 text-3xl hover:scale-110 transition cursor-pointer"
+            >
+              <i class="fas fa-times"></i>
+            </span>
+            <video id="m-video" controls class="w-4/5 object-cover">
+              <source
+                src="Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/Movie.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="movie-details w-full lg:w-11/12 mx-auto text-center p-7 my-6"
+      >
+        <h3 class="text-neutral-300 text-xl md:text-3xl">
+          Pirates of the Caribean: Salazar's Revenge
+        </h3>
+        <p class="p-3 text-neutral-400">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, veniam
+          architecto, debitis quia similique adipisci autem quod eligendi
+          delectus dolorum iusto. Eius, nobis ducimus! Corrupti nobis id itaque
+          facere a.
+        </p>
+      </section>
+
+      <section class="screenshots w-4/5 mx-auto mb-12">
+        <h3 class="text-red-600 text-4xl mb-2">ScreenShots</h3>
+        <div class="ss-container grid grid-cols-2 gap-1">
+          <img
+            src="Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/screenshot-1.jpg"
+            alt=""
+            class="h-full w-full object-cover cursor-pointer"
+          />
+          <img
+            src="Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/screenshot-2.jpg"
+            alt=""
+            class="h-full w-full object-cover cursor-pointer"
+          />
+          <img
+            src="Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/screenshot-2.jpg"
+            alt=""
+            class="h-full w-full object-cover cursor-pointer"
+          />
+          <img
+            src="Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/screenshot-1.jpg"
+            alt=""
+            class="h-full w-full object-cover cursor-pointer"
+          />
+        </div>
+      </section>
+
+      <section
+        class="download-movie w-4/5 mx-auto mb-12 space-y-3 md:space-y-1 text-center text-neutral-300"
+      >
+        <ul class="download-box grid md:grid-cols-4 p-3 gap-3 bg-zinc-950">
+          <li><i class="fas fa-server"></i> Server 3</li>
+          <li>English</li>
+          <li>480p</li>
+          <li>
+            <a
+              href="Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/Movie.mkv"
+              download
+              class="text-red-600 hover:text-red-800 transition"
+              >Download</a
+            >
+          </li>
+        </ul>
+        <ul class="download-box grid md:grid-cols-4 p-3 gap-3 bg-zinc-950">
+          <li><i class="fas fa-server"></i> Server 3</li>
+          <li>English</li>
+          <li>720p</li>
+          <li>
+            <a
+              href="Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/Movie.mkv"
+              download
+              class="text-red-600 hover:text-red-800 transition"
+              >Download</a
+            >
+          </li>
+        </ul>
+        <ul class="download-box grid md:grid-cols-4 p-3 gap-3 bg-zinc-950">
+          <li><i class="fas fa-server"></i> Server 3</li>
+          <li>English</li>
+          <li>1080p</li>
+          <li>
+            <a
+              href="Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/Movie.mkv"
+              download
+              class="text-red-600 hover:text-red-800 transition"
+              >Download</a
+            >
+          </li>
+        </ul>
+      </section>
+    </div>
+    <!-- End Banner -->
+
+    <!-- Start footer -->
+    <div class="footer mb-3 mt-6 px-3">
+      <div
+        class="container m-auto flex flex-col sm:flex-row items-center justify-between"
+      >
+        <a
+          href="index.html"
+          class="logo text-lg text-red-600 text-center tracking-widest flex items-end justify-center"
+        >
+          <span class="text-2xl lg:text-5xl pl-2">Z</span>movies
+        </a>
+
+        <span class="copyright text-zinc-500 text-xs md:text-base">
+          &copy; Copyright 2023 - ZIAD EID
+        </span>
+      </div>
+    </div>
+    <!-- End footer -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
